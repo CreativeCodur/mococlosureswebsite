@@ -1,0 +1,248 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Neo-brutalism meets soft pop design system with pastel blue, black, blue, navy, beige, brown */
+:root {
+  --background: oklch(0.98 0.005 85); /* soft off-white */
+  --foreground: oklch(0.15 0 0); /* black */
+
+  --card: oklch(1 0 0); /* white */
+  --card-foreground: oklch(0.15 0 0); /* black */
+
+  --popover: oklch(1 0 0); /* white */
+  --popover-foreground: oklch(0.15 0 0); /* black */
+
+  --primary: oklch(0.55 0.15 240); /* pastel blue */
+  --primary-foreground: oklch(0.15 0 0); /* black */
+
+  --secondary: oklch(0.35 0.12 245); /* navy blue */
+  --secondary-foreground: oklch(1 0 0); /* white */
+
+  --muted: oklch(0.85 0.02 75); /* beige */
+  --muted-foreground: oklch(0.35 0.05 45); /* brown */
+
+  --accent: oklch(0.65 0.18 235); /* bright blue */
+  --accent-foreground: oklch(0.15 0 0); /* black */
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.15 0 0); /* black borders for neo-brutalism */
+  --input: oklch(1 0 0);
+  --ring: oklch(0.65 0.18 235);
+
+  --chart-1: oklch(0.55 0.15 240); /* pastel blue */
+  --chart-2: oklch(0.35 0.12 245); /* navy */
+  --chart-3: oklch(0.85 0.02 75); /* beige */
+  --chart-4: oklch(0.35 0.05 45); /* brown */
+  --chart-5: oklch(0.65 0.18 235); /* blue */
+
+  --radius: 0.125rem; /* minimal radius for neo-brutalism */
+
+  /* Shadow system for depth */
+  --shadow-brutal: 4px 4px 0px oklch(0.15 0 0);
+  --shadow-brutal-lg: 8px 8px 0px oklch(0.15 0 0);
+  --shadow-brutal-xl: 12px 12px 0px oklch(0.15 0 0);
+  --shadow-soft: 0 4px 12px oklch(0.15 0 0 / 0.1);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.55 0.15 240);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.35 0.12 245);
+  --sidebar-border: oklch(0.15 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.98 0.005 85);
+
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.98 0.005 85);
+
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.98 0.005 85);
+
+  --primary: oklch(0.55 0.15 240);
+  --primary-foreground: oklch(0.15 0 0);
+
+  --secondary: oklch(0.35 0.12 245);
+  --secondary-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+
+  --accent: oklch(0.65 0.18 235);
+  --accent-foreground: oklch(0.15 0 0);
+
+  --destructive: oklch(0.45 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 85);
+
+  --border: oklch(0.98 0.005 85);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.65 0.18 235);
+
+  --chart-1: oklch(0.55 0.15 240);
+  --chart-2: oklch(0.35 0.12 245);
+  --chart-3: oklch(0.85 0.02 75);
+  --chart-4: oklch(0.35 0.05 45);
+  --chart-5: oklch(0.65 0.18 235);
+
+  --shadow-brutal: 4px 4px 0px oklch(0.98 0.005 85);
+  --shadow-brutal-lg: 8px 8px 0px oklch(0.98 0.005 85);
+  --shadow-brutal-xl: 12px 12px 0px oklch(0.98 0.005 85);
+  --shadow-soft: 0 4px 12px oklch(0 0 0 / 0.5);
+
+  --sidebar: oklch(0.35 0.12 245);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.55 0.15 240);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.98 0.005 85);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* Updated font configuration for Saira Extra Condensed, Geist Mono, and Poppins */
+@theme inline {
+  --font-sans: "Poppins", "Poppins Fallback";
+  --font-display: "Saira Extra Condensed", "Saira Extra Condensed Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Minimal radius for neo-brutalism aesthetic */
+  --radius-sm: 0rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Neo-brutalism utility classes with shadows */
+@layer utilities {
+  .shadow-brutal {
+    box-shadow: var(--shadow-brutal);
+  }
+  .shadow-brutal-lg {
+    box-shadow: var(--shadow-brutal-lg);
+  }
+  .shadow-brutal-xl {
+    box-shadow: var(--shadow-brutal-xl);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .border-thick {
+    border-width: 3px;
+  }
+  .border-thicker {
+    border-width: 4px;
+  }
+}
+
+/* Adding pushed button effect on hover for all buttons */
+@layer base {
+  button,
+  a[role="button"],
+  [type="button"],
+  [type="submit"] {
+    @apply transition-all duration-150 ease-out;
+  }
+
+  button:hover:not(:disabled),
+  a[role="button"]:hover,
+  [type="button"]:hover:not(:disabled),
+  [type="submit"]:hover:not(:disabled) {
+    transform: translate(2px, 2px);
+  }
+
+  /* Adjust shadows on hover to create pressed effect */
+  button:hover:not(:disabled).shadow-brutal,
+  a[role="button"]:hover.shadow-brutal,
+  [type="button"]:hover:not(:disabled).shadow-brutal,
+  [type="submit"]:hover:not(:disabled).shadow-brutal {
+    box-shadow: 2px 2px 0px oklch(0.15 0 0);
+  }
+
+  button:hover:not(:disabled).shadow-brutal-lg,
+  a[role="button"]:hover.shadow-brutal-lg,
+  [type="button"]:hover:not(:disabled).shadow-brutal-lg,
+  [type="submit"]:hover:not(:disabled).shadow-brutal-lg {
+    box-shadow: 4px 4px 0px oklch(0.15 0 0);
+  }
+
+  button:hover:not(:disabled).shadow-brutal-xl,
+  a[role="button"]:hover.shadow-brutal-xl,
+  [type="button"]:hover:not(:disabled).shadow-brutal-xl,
+  [type="submit"]:hover:not(:disabled).shadow-brutal-xl {
+    box-shadow: 6px 6px 0px oklch(0.15 0 0);
+  }
+
+  /* Active state for even more pressed effect */
+  button:active:not(:disabled),
+  a[role="button"]:active,
+  [type="button"]:active:not(:disabled),
+  [type="submit"]:active:not(:disabled) {
+    transform: translate(4px, 4px);
+  }
+
+  button:active:not(:disabled).shadow-brutal,
+  button:active:not(:disabled).shadow-brutal-lg,
+  button:active:not(:disabled).shadow-brutal-xl,
+  a[role="button"]:active.shadow-brutal,
+  a[role="button"]:active.shadow-brutal-lg,
+  a[role="button"]:active.shadow-brutal-xl,
+  [type="button"]:active:not(:disabled).shadow-brutal,
+  [type="button"]:active:not(:disabled).shadow-brutal-lg,
+  [type="button"]:active:not(:disabled).shadow-brutal-xl,
+  [type="submit"]:active:not(:disabled).shadow-brutal,
+  [type="submit"]:active:not(:disabled).shadow-brutal-lg,
+  [type="submit"]:active:not(:disabled).shadow-brutal-xl {
+    box-shadow: 0px 0px 0px oklch(0.15 0 0);
+  }
+}
